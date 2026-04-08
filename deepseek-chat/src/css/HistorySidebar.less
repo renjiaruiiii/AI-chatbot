@@ -1,0 +1,92 @@
+@import "./Media.css";
+
+@primary-color: #2563eb;
+@border-color: #e5e7eb;
+@text-gray: #6b7280;
+@danger-color: #ef4444;
+@active-bg: #e6effe;
+@font-stack: "Microsoft YaHei", Arial, sans-serif;
+
+// Mixin:封装成可复用的样式代码，直接调用即可
+.button-base(@padding: 0.75rem 0, @bg: @primary-color, @color: white) {
+    width: 100%;
+    background-color: @bg;
+    color: @color;
+    border: none;
+    border-radius: 0.3rem;
+    padding: @padding;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: @font-stack;
+}
+
+.history-sidebar {
+    height: 100%;
+    /* 左侧历史侧边栏宽度永远为25% */
+    width: 25%;
+    box-sizing: border-box;
+    border-right: 1px solid @border-color;
+    writing-mode: horizontal-tb;
+    position: relative;
+    top: 0;
+
+    h3 {
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        font-size: 1.45rem;
+        padding: 0.65rem 0;
+        font-weight: 700;
+        font-family: @font-stack;
+    }
+
+    button.new-chat {
+        .button-base();
+        position: absolute;
+        top: 3.2rem;
+    }
+
+    ul {
+        width: 100%;
+        position: absolute;
+        // Calculation: 3.2rem (button top) + 4.0rem (offset) = 7.2rem
+        top: 3.2rem + 4.0rem;
+        list-style: none;
+    }
+
+    li {
+        position: relative;
+        min-height: 1.8rem;
+        padding: 1.125rem 0 1.125rem 0.5625rem;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        margin-bottom: 0.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1rem;
+        font-family: @font-stack;
+
+        &:hover,
+        &.active {
+            background-color: @active-bg;
+        }
+
+        button.delete {
+            position: absolute;
+            right: 0;
+            background-color: transparent;
+            color: @text-gray;
+            padding: 0.2rem;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            font-family: @font-stack;
+
+            &:hover {
+                color: @danger-color;
+            }
+        }
+    }
+}

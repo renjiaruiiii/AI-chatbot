@@ -1,0 +1,10 @@
+@import "./Media.css";
+
+button.voice {
+    background-color: #e5e7eb;
+    color: #4b5563;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
