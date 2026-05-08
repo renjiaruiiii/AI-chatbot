@@ -86,7 +86,7 @@ export const useChatStore = create((set, get) => ({
             // res = { chat: { user, ai, session_id } }
 
 
-            // 2. 接收到 AI 回复后，把 AI 的消息单独加进去（渲染 AI 方）
+            // 2. 接收到 AI 回复后，把 AI 的消息展示在聊天区（渲染 AI 方）
             const aiMsg = { role: 'assistant', content: res.chat.ai };
             set((state) => ({
                 messages: [...state.messages, aiMsg],
@@ -94,9 +94,8 @@ export const useChatStore = create((set, get) => ({
             }))
         } catch (error) {
             console.error("发送信息出错", error)
-            set((state) => ({
-                isLoading: false
-            }))
+            set(state => ({ ...state, isLoading: false }))
+
         }
     },
 

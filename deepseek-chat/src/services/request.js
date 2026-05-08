@@ -3,8 +3,7 @@ import axios from "axios";
 
 // 1. 创建 axios 实例
 const request = axios.create({
-    baseURL: "http://localhost:3000/api",
-    timeout: 5000
+    baseURL: "http://localhost:3000/api"
 })
 
 // 2. 请求拦截器 (可以在这里统一添加 token 等)

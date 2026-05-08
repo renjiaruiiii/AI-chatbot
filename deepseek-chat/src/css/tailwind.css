@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+
+/* 自定义主题 :添加新的颜色、字体、间距、边框大小、背景等*/
+@theme {
+  /* 字体 */
+  --font-primary: "Microsoft YaHei", Arial, sans-serif;
+
+
+  /*  颜色 */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-border-base: #e5e7eb;
+  --color-input-border: #d1d5db;
+  --color-active-bg: #e6effe;
+  --color-text-gray: #6b7280;
+  --color-danger: #ef4444;
+  --color-user-bg: #bfdbfe;
+  --color-assistant-bg: #f3f4f6;
+
+
+  /*  圆角 */
+  --radius-lg: 1.25rem;
+  --radius-base: 0.4rem;
+}
+
+
+/* 媒体查询（全局重置） */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1201px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (min-width: 993px) and (max-width: 1200px) {
+    html {
+      font-size: 15px;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 992px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    html {
+      font-size: 12px;
+    }
+  }
+}

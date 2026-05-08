@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import '../css/MessageList.less';
 import { useChatStore } from '../store/ChatStore';
 
 export default function MessageList() {
@@ -25,21 +24,23 @@ export default function MessageList() {
     }, [messages]);
 
     return (
-        <div className="message-list">
+        <div className="box-border h-[91vh] p-[1rem] flex flex-col overflow-y-auto">
 
             {/* 5.渲染消息列表 */}
             {messages.filter(msg => msg.role !== 'system').map((msg, index) => (
                 <div key={index}
-                    className={`message ${msg.role}`}>
+                    className={`max-w-full mb-[1rem] rounded-[0.6rem] p-[0.9rem_0.875rem] [word-break:break-word] font-primary text-[1.05rem] ${msg.role === 'user' ? 'self-end bg-user-bg' : 'self-start bg-assistant-bg'}`}>
                     <p>
                         {msg.role === 'user' ? '我' : 'DeepSeek'}:{msg.content}
-                    </p>
+                    </p >
                 </div>
-            ))
+            )
+
+            )
             }
 
             {isLoading && (
-                <div className="typing">
+                <div className="text-text-gray italic self-start mb-[0.75rem] text-base font-primary">
                     DeepSeek: 正在思考...
                 </div>
             )}
