@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { VoiceRecorder } from './VoiceRecorder';
 import { useChatStore } from '../store/ChatStore';
 
@@ -9,7 +9,7 @@ export default function ChatInput() {
     // 管理输入框内容
     const [content, setContent] = useState('')
 
-    //1.发送信息
+    // 1.发送信息
     const handleSend = async () => {
         if (!content.trim() || isLoading || !currentSession) return
         await sendMessages(content)
@@ -17,8 +17,8 @@ export default function ChatInput() {
         setContent('')
     }
 
-    //2.enter发送
-    const handleKeyDown = (e) => {
+    // 2.enter发送
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             handleSend()
         }
@@ -31,7 +31,7 @@ export default function ChatInput() {
                 placeholder="输入消息..."
                 type="text"
                 value={content}
-                onChange={(e) => setContent(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setContent(e.target.value)}
                 onKeyDown={handleKeyDown}
                 disabled={isLoading || !currentSession}
             />
@@ -46,3 +46,4 @@ export default function ChatInput() {
         </div>
     );
 };
+
