@@ -1,5 +1,9 @@
 <img width="1917" height="1025" alt="image" src="https://github.com/user-attachments/assets/069a7614-bf8e-4845-bf44-5b9a09f3d309" />
 
+
+https://github.com/user-attachments/assets/1b8fc775-a97b-446f-89b7-50df3f691a44
+
+
 # AI Chatbot 
 
 基于 DeepSeek API 的前后端分离 AI 聊天机器人，使用 React + TypeScript + Tailwind CSS 构建前端，Node.js + Express + MySQL 提供后端支持。
